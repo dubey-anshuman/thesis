@@ -1,0 +1,22 @@
+\chapter{The Black Hole Information Paradox}
+Essentially the black hole information paradox arises from the fact that a quantum mechanical treatment of black holes leads to evolution of a pure initial state into a mixed state. Starting from a pure state described by it's desity matrix $\rho$ and using a unitary time evolution operator $U(t^\prime, t)$, 
+
+ \begin{align*}
+  \rho \xrightarrow{U(t)} U \rho U^\dag
+  \implies Tr[U \rho U^\dag U \rho U^\dag] = Tr[ U^\dag U \rho \rho] =  Tr[\rho^2] =1
+ \end{align*}
+ 
+\begin{align*}
+ \left\langle \phi_1(x_1) \phi_2(x_2)\right\rangle = \left| \frac{\partial x^\prime}{\partial x}\right|_{x=x_1}^{\Delta_1/d} \left| \frac{\partial x^\prime}{\partial x}\right|_{x=x_2}^{\Delta_2/d} \left\langle \phi_1(x_1^\prime) \phi_2(x_2^\prime) \right\rangle
+\end{align*}
+Since the Poincar\'{e} group is a subgroup of the Conformal group, due to rotational and translational invariance the two point functon may only depend on $r_{12}=|x_1-x_2|$. denote $\Braket{\phi_1(x_1)\phi_2(x_2)} \equiv f(x_1,x_2) = f(|x_1-x_2|)=f(r_{12})$. 
+Then under the rescaling $x_1, x_2 \to \lambda x_1, \lambda x_2$. $f^\prime \equiv {df}/{d\lambda}$
+\begin{align*}
+ f(r)=\lambda^{\Delta_1/d} \lambda^{\Delta_2/d} f(\lambda r) = \lambda^c  f(\lambda r) \\
+ \implies c\frac{\lambda^c}{\lambda} f(\lambda r) + \lambda^c f^\prime(\lambda r) r =0 \\
+ \text{set } r = 1 \\
+ \implies \frac{c}{\lambda} f(\lambda) + f^\prime(\lambda ) = 0 \\
+ \implies \int \frac{f^\prime(\lambda )}{f(\lambda)} = - \int \frac{c}{\lambda} \\
+ \implies f(\lambda) \propto \lambda^{-c}
+\end{align*}
+

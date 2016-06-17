@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: Title/title.aux
+A level-1 auxiliary file: Abstract/abstract.aux
+A level-1 auxiliary file: Chapter1/chapter1.aux
+A level-1 auxiliary file: Chapter2/chapter2.aux
+A level-1 auxiliary file: Chapter3/chapter3.aux
+A level-1 auxiliary file: Chapter4/chapter4.aux
+A level-1 auxiliary file: Chapter6/chapter6.aux
+A level-1 auxiliary file: Chapter7/chapter7.aux
+A level-1 auxiliary file: Chapter8/chapter8.aux
+A level-1 auxiliary file: Appendix/appendix1.aux
+A level-1 auxiliary file: Appendix/appendix2.aux
+A level-1 auxiliary file: Appendix/appendix3.aux
+A level-1 auxiliary file: Appendix/appendix4.aux
+A level-1 auxiliary file: Appendix/appendix5.aux
+The style file: siam.bst
+Database file #1: thesis.bib
+Repeated entry---line 220 of file thesis.bib
+ : @article{Harlow:2011ny
+ :                       ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "central"
+Warning--empty journal in Hartman:2013mia
+Warning--empty journal in Hijano:2015zsa
+You've used 20 entries,
+            2030 wiz_defined-function locations,
+            653 strings with 7041 characters,
+and the built_in function-call counts, 7023 in all, are:
+= -- 694
+> -- 263
+< -- 0
++ -- 106
+- -- 85
+* -- 516
+:= -- 1058
+add.period$ -- 24
+call.type$ -- 20
+change.case$ -- 103
+chr.to.int$ -- 0
+cite$ -- 22
+duplicate$ -- 355
+empty$ -- 503
+format.name$ -- 85
+if$ -- 1553
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 21
+newline$ -- 67
+num.names$ -- 39
+pop$ -- 78
+preamble$ -- 1
+purify$ -- 84
+quote$ -- 0
+skip$ -- 332
+stack$ -- 0
+substring$ -- 467
+swap$ -- 173
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 78
+warning$ -- 2
+while$ -- 67
+width$ -- 22
+write$ -- 185
+(There was 1 error message)

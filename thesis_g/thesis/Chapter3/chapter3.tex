@@ -1,0 +1,273 @@
+%   \chapter{Introduction to 2+1 Gravity}
+%   \section{Review}
+%   \section{BTZ black holes and Conical Defects}
+%   \section{Chern-Simons formulation}
+%   \cite{Achucarro:1987vz}
+
+\chapter{Conformal Blocks using CFT}
+
+Despite being well defined functions as sum over two point functions of conformal families, practical computation of Conformal Blocks is far from trivial. Over the years, various techniques have been developed to calculate explicit expressions for conformal blocks where possible; series expansions and recursive formulas where not. This chapter lists two powerful CFT methods for calculation of conformal blocks in various limits. 
+
+The Conformal Casimir approach gives a differential equation that must be satisfied by any conformal block, and has been used to calculate explicit expressions for conformal blocks (in terms of hypergeometric functions) for $d=even$ conformal field theories. We will use this in Chapter \ref{ch:holographic} to verify that the holographic expression obtained indeed calculates the conformal block with the claimed exchanged conformal family.
+
+The monodromy method calculates the semi-classical (central charge $c \to \infty$) conformal block by imposing a required monodromy on the solutions of a particular differential equation. Concisely, we solve the differential equation and then impose the required monodromy to determine a certain \emph{auxiliary function} $c_2(x_i)$ whose indefinite integral directly computes the 4-point conformal block. 
+
+In general the difficulty goes up as one goes to more complicated representations of the conformal group. It is much harder to calculate conformal blocks due to an exchange of a spinning operator with the external operators carrying spin as well, as compared to calculating conformal blocks for the case where all operators are spinless. Moreover CFT$_d$ conformal blocks for even $d$ and scalar exchange can be resummed into hypergeometric functions \cite{Hijano:2015zsa}. No such representation is known for odd $d$.
+
+\section{Conformal Casimir Approach}
+The idea in the Conformal Casimir approach is that the conformal partial waves $W_{\Delta,l}(x_i)$ \ref{ch2:CPW} are solutions of a second order differential equation formed from the Conformal Casimir. This can be taken as a definition of the CPWs and can be used to explicitly calculate conformal blocks, where possible.
+
+This section is formulated in the Embedding formalism (section \ref{ch2:embedding}) since the relevant equations appear in a simpler form in this formalism. In the Embedding formalism, one identifies $d$-dimensional conformal group generators with $d+2$-dimensional Lorentz group generators $L_{AB}$. Then the operator $L^2=L_{AB}L^{AB}$ is the casimir of the algebra. This means that all descendant states $(\hat{P}^\mu)^n\ket{\Delta}$ belonging to the conformal family of the primary $\ket{\Delta} = \op{O}\ket{0}$ have the same eigenvalue given by \cite{Dolan:2000ut}: 
+
+\begin{align}
+ C_2(\Delta,l)= - \Delta(\Delta-d)-l(l+d-2)
+\end{align}
+
+As for usual conformal group generators, the action of $L_{AB}$ on operators $\op{O}_1(x_1)$ is the application of a differential operator on the operator $\op{O}_1(x_1)$:
+
+\begin{align} \label{ch3:casimir_action}
+ [L_{AB},\op{O}_1(x_1)] = L^1_{AB}\op{O}_1(x_1)
+\end{align}
+
+Where $L_{AB}^1$ represents the differential operator w.r.t the position $x_1$. Using \ref{ch3:casimir_action} and the invariance of the vacuum under conformal transformations $L_{AB}\ket{0}=0$ one can write for the conformal casimir $L^2$ and some general state $\ket{\alpha}$:
+
+\begin{align} \label{ch3:differential_casimir}
+ \braket{0|\op{O}_1(x_1)\op{O}_2(x_2)L^2|\alpha} = (L_{AB}^1+L_{AB}^2)^2\braket{0|\op{O}_1(x_1)\op{O}_2(x_2)|\alpha}
+\end{align}
+
+with the differential operator on the RHS defined as 
+
+\begin{align}
+ (L_{AB}^1+L_{AB}^2)^2 \equiv \frac{1}{2}(L_{AB}^1+L_{AB}^2)(\tensor[]{L}{^1^{AB}}+\tensor[]{L}{^2^{AB}})
+\end{align}
+
+Consider expression \ref{ch2:CPW_0} for a 4-point function, reproduced here for clarity:
+
+\begin{multline}
+ \braket{ \op{O}_1(x_1) \op{O}_2(x_2) \op{O}_3(x_3) \op{O}_4(x_4)} \\ =  \sum_{\op{O}}  \frac{\lambda_{12\op{O}}}{|x_{12}|^{\Delta_1+\Delta_2-\Delta}} \frac{\lambda_{34\op{O}}}{|x_{34}|^{\Delta_3+\Delta_4-\Delta}} \bigg( \braket{\op{O}(x_2)\op{O}(x_4)}+\braket{\partial \op{O}(x_2) \partial \op{O}(x_4)}+\dots \bigg)
+\end{multline}
+
+This is equivalent to inserting the identity corresponding to the complete set of projection operators:
+
+\begin{align}
+ \mathbb{1} = \sum_{\op{O} \text{ primary}} \sum_{n=0}^\infty \ket{P^n \op{O}}\bra{P^n \op{O}}
+\end{align}
+\begin{multline}
+ \braket{ \op{O}_1(x_1) \op{O}_2(x_2) \mathbb{1}  \op{O}_3(x_3) \op{O}_4(x_4)} = \sum_{\op{O} \text{ primary}} \sum_{n=0}^\infty \braket{0| \op{O}_1(x_1) \op{O}_2(x_2)|P^n \op{O}}  \braket{P^n \op{O}| \op{O}_3(x_3) \op{O}_4(x_4)|0}
+\end{multline}
+
+Comparing to eqn. \ref{ch2:CPW_2} we get for the CPW due to exchange of operator $\op{O}$ with scaling dimension and spin $\Delta, l$ respectively:
+
+\begin{align}
+ W_{\Delta,l}(x_i) = \frac{1}{\lambda_{12\Delta} \lambda_{34\Delta}} \sum_{n=0}^\infty \braket{0| \op{O}_1(x_1) \op{O}_2(x_2)|P^n \op{O}}  \braket{P^n \op{O}| \op{O}_3(x_3) \op{O}_4(x_4)|0}
+\end{align}
+
+With eqn. \ref{ch3:differential_casimir} and the fact that $L^2 \ket{P^n \op{O}} = C_2(\Delta,l)\ket{P^n \op{O}} \, \forall \, n \in \amsmathbb Z_{\ge 0}$ we have
+\begin{align}
+ (L_{AB}^1+L_{AB}^2)^2 W_{\Delta,l}(x_i) = \frac{C_2(\Delta,l)}{\lambda_{12\Delta} \lambda_{34\Delta}} \sum_{n=0}^\infty \braket{0| \op{O}_1(x_1) \op{O}_2(x_2)|P^n \op{O}}  \braket{P^n \op{O}| \op{O}_3(x_3) \op{O}_4(x_4)|0}
+\end{align}
+
+\begin{align}
+ \implies (L_{AB}^1+L_{AB}^2)^2 W_{\Delta,l}(x_i) = C_2(\Delta,l) W_{\Delta,l}(x_i) 
+\end{align}
+
+The Lorentz killing vectors $L_{AB}$ are written as  $L_{AB}= Y_A \partial_B-Y_B \partial_A$ which implies that for $Y$ on the AdS hyperbola $Y^2=-1$ ,
+
+\begin{align}
+ L^2 f(Y) = \frac{1}{2}L_{AB}L^{AB} f(Y) = - \nabla_Y f(Y)
+\end{align}
+
+This will serve as a useful CFT check for the Witten diagram calculation of conformal blocks in the next chapter.
+
+\section{Monodromy Method}
+
+
+
+The monodromy method is a technique to calculate conformal partial waves for 2-D CFTs in the semi-classical limit. The semi-classical limit for 2D CFTs corresponds to taking the central charge $c \to \infty$. This is the main limit of interest in this thesis, and the motivation for this limit and the holographic calculation of conformal blocks in this limit is included in chapter \ref{ch:semiclassical}. The monodromy method and the terms 'semi-classical limit', 'heavy' and 'light' operators come from Liouville theory which is a CFT with a specific action (see \cite{Harlow:2011ny} for a detailed discussion of Liouville theory and \cite{Harlow:2011ny,Fitzpatrick:2014vua,Hartman:2013mia} for the Monodromy method). However the idea is that since the conformal blocks are determined solely by the Virasoro algebra, they apply for any CFT at large central charge\cite{Hartman:2013mia}.
+
+The word monodromy come from greek \emph{mono} meaning 'alone' or 'singly' and \emph{dr\'omos} meaning 'to run'. The monodromy group of a complex differential equation specifies the behaviour of the solutions after going around a singularity once. More precisely, given the following linear differential equation 
+  \begin{align} \label{ch3:linear_system}
+   \frac{d\bold{y}}{dz}=A\bold{y}
+  \end{align}
+ with $A \in GL_n(\amsmathbb{C}[z])$ and $\bold{y}$ a $n$-vector, let $S=\{a_0,a_1,\dots,a_s\}$ be the set of singular points of $A$. Let $b_0 \in \amsmathbb{P}^1(\amsmathbb{C})\setminus S$ where  $\amsmathbb{P}^1(\amsmathbb{C})$ is the complex Riemann sphere. Then standard existence and uniqueness theorems imply a $n\times n$ solution matrix $Y$ (the columns of $Y$ are the solutions $\bold{y}_1,\bold{y}_2,\dots,\bold{y}_n$) in the neighbourhood of $b_0$. Choose a closed path $\gamma$ starting and ending at $b_0$ and encircling one of the singularities, say $a_0$. Analytically continue the solution matrix $Y$ to $\tilde{Y}$ along the path $\gamma$ back to the point $b_0$. Then $\tilde{Y}$ and $Y$ are related by a constant matrix $M$ called the \emph{monodromy matrix}:
+ 
+ \begin{align}
+  \tilde{Y} = M Y
+ \end{align}
+ 
+It is expected that in the semi-classical $c \to \infty$ limit the conformal partial waves exponentiate, although as of yet there exists no direct proof from the definition of conformal partial waves as sum over conformal family contributions. 
+\begin{align} \label{ch3:semiclassical_exponentiation}
+ \braket{0|\op{O}_1(x_1)\op{O}_2(x_2)|\alpha}\braket{\alpha|\op{O}_3(x_3)\op{O}_4(x_4)|0} = \mathcal{F}_{\alpha}(x_i) \approx e^{-\frac{c}{6}f(x_i)}
+\end{align}
+
+The main result of this section is that to determine the function $f(x_i)$ in \ref{ch3:semiclassical_exponentiation}, we need to solve the following differential equation
+
+\begin{align} \label{ch3:monodromy_diff}
+ \psi^{\prime\prime}(z)+T(z)\psi(z)=0
+\end{align}
+with $T(z)$ not completely known, but dependent on a particular function $c_2(x_i)$ (to be determined). Then impose a specific monodromy determined by the conformal weights of the operators $\op{O}_i$ in \ref{ch3:semiclassical_exponentiation} on the two solutions. Note that we are discussing the monodromy for the second order equation \ref{ch3:monodromy_diff} despite defining the monodromy matrix for a system of linear differential equations \ref{ch3:linear_system} since an $n^\text{th}$ order differential equation in general and the second order differential equation \ref{ch3:monodromy_diff} in particular can be formulated as a system of linear differential equations as $\psi^\prime(z)=\phi(z), \phi^\prime(z)=-T(z)\psi(z)$.
+
+This determines the function $c_2(x_i)$. Thereafter the function $f(x_i)$ in \ref{ch3:semiclassical_exponentiation} is given by:
+\begin{align}
+ c_2(x_i)=\frac{\partial f(x_i)}{\partial x_2}
+\end{align}
+and this determines the conformal block $\mathcal{F}_{\alpha}(x_i)$. 
+
+
+\subsection{Shortening Condition and Degenerate Operators}
+
+The steps involved in reaching equation \ref{ch3:monodromy_diff} are as follows: It can be argued \cite{Fitzpatrick:2015zha} that inserting a 'light' operator $\hat{\psi}(z)$ in the 4-point correlator only changes the associated conformal block by multiplication with a function $\psi(z,x_i)$:
+
+\begin{align} \label{ch3:light_insertion}
+ \Psi(x_i,z)= \braket{0|\op{O}_1(x_1)\op{O}_2(x_2)|\alpha}\braket{\alpha| \hat{\psi}(z)\op{O}_3(x_3)\op{O}_4(x_4)|0} = \psi(z,x_i) \mathcal{F}_{\alpha}(x_i)
+\end{align}
+
+  A degenerate  operator in 2D CFT is a primary operator whose descendants form a short representation of the Virasoro algebra and this implies that correlation functions involving the degenerate operator obey a certain differential equation \cite{Harlow:2011ny,Belavin:1984vu}. In particular one can choose $\hat{\psi}(z)$ as a degenerate operator obeying the following shortening condition:
+  
+  \begin{align} \label{ch3:shortening}
+   \left( L_{-2} - \frac{3}{2(2 h_\psi+1)} L_{-1}^2\right) \ket{\psi} = 0
+  \end{align}
+  Acting with the shortening condition \ref{ch3:shortening} leads to the following differential equation in $z$ for the function $\psi(z)$ in equation \ref{ch3:light_insertion}:
+  
+  \begin{align}
+   \psi^{\prime\prime}(z) + T(z)\psi(z) = 0
+  \end{align}
+  where setting $x_1=0, x_2=x,x_3=1, x_4=\infty$ fixes $T(z)$ to be 
+  \begin{align} \label{ch3:monodromy_Tz}
+   \frac{c}{6}T(z) = \frac{h_1}{z^2} + \frac{h_2}{(z-x)^2} +\frac{h_3}{(1-z)^2} + \frac{h_1+h_2+h_3-h_4}{z(1-z)} - \frac{c}{6} c_2(x) \frac{x(1-x)}{z(z-x)(1-z)}
+  \end{align}
+  with 
+  \begin{align} \label{ch3:diff_semi}
+   c_2(x)=\frac{\partial f(x_i)}{\partial x_2}
+  \end{align}
+
+  \subsection{Monodromy}
+  
+  To determine the semi-classical Virasoro block $f(x_i)$ using the condition \ref{ch3:diff_semi} we need to impose a certain monodromy on the solutions (there are two) of the differential equation \ref{ch3:monodromy_diff}. This monodromy is not arbitrary but is determined exactly by imposing the shortening condition on the 3-point function with one of the operators taken to be a degenerate primary of scaling dimension $h_\psi$. Consider the 3-point function $V_{\alpha \beta \psi}$ which by conformal symmetry is fixed to be (see \ref{ch2:3_point}):
+  \begin{align}
+   V_{\alpha \beta \psi} = \braket{\op{O}_\alpha(x_1) \op{O}_\beta(x_2) \hat{\psi}(x_3)}=\frac{C_{\alpha \beta \psi}}{x_{12}^{h_\alpha+h_\beta-h_\psi} x_{12}^{h_\beta+h_\psi-h_\alpha}x_{13}^{h_\alpha+h_\psi-h_\beta}}
+  \end{align}
+  Imposing the shortening condition on $V_{\alpha \beta \psi}$ and taking the semi-classical limit, $c \to \infty$ with $h_\alpha / c$ fixed, one gets
+  
+  \begin{align} \label{ch3:monodromy_scaling}
+   h_\beta -h_\alpha -h_\psi = \frac{1}{2}\left(1\pm\sqrt{1-{24h_\alpha}/{c}}\right)
+  \end{align}
+  
+  This is used to specify the monodromy of the function $\psi(z,x_i)$ in equation \ref{ch3:monodromy_diff} using $\braket{\op{O}_1\op{O}_2|\alpha}\braket{\alpha|\hat{\psi}\op{O}_3\op{O}_4}$ from  \ref{ch3:light_insertion}. Expanding $\op{O}_3\op{O}_4$ in the OPE $\op{O}_3\op{O}_4=\sum_{\beta}c_{34\beta}\op{O}_\beta$, then the 3-point functions $\sum_\beta c_{34\beta}\braket{\alpha|\hat{\psi}\op{O}_\beta}$ only gets contributions from $h_\beta$ given by \ref{ch3:monodromy_scaling}, that is, $\op{O}_\alpha(y)\hat{\psi}(z)\op{O}_\beta(x_4) \sim (z-y)^{-(h_\beta -h_\alpha -h_\psi )}=(z-y)^{-\frac{(1\pm\sqrt{1-{24h_\alpha}/{c}})}{2}}$ as $z$ goes around $y$. The only surviving states $\ket{\alpha}$ in $\braket{\op{O}_1\op{O}_2|\alpha}\braket{\alpha|\hat{\psi}\op{O}_3\op{O}_4}$ are the ones present in the $\op{O}_1\op{O}_2$ OPE hence the monodromy cycle of $z$ around $y$ must enclose both $x_1,x_2$ but not $x_3, x_4$. 
+  
+  Due to $\op{O}_\alpha(y)\hat{\psi}(z)\op{O}_\beta(x_4) \sim (z-y)^{-\frac{(1\pm\sqrt{1-{24h_\alpha}/{c}})}{2}}$ a cycle of $z$ around $y$: $z-y \sim e^{2i\pi}$ gives the following monodromy matrix $M$ (in the basis which diagonalises $M$) for the solutions of \ref{ch3:monodromy_diff}:
+  
+  \begin{align} \label{ch3:monodromy_matrix}
+   M = \begin{bmatrix}
+   e^{i\pi(1+\sqrt{1-{24h_\alpha}/{c}})} & 0 \\
+   0 & e^{i\pi(1-\sqrt{1-{24h_\alpha}/{c}})}
+   \end{bmatrix}
+  \end{align}
+  Where $h_\alpha$ is the scaling dimension of the primary of the conformal family $\ket{\alpha}$. The matrix $M$ is basis dependent but its trace remains invariant. For the exchange of the identity block (and descendants) we have $h_\alpha = 0$ which means $M$ is simply the identity matrix $M=\mathbb{1}$.
+  
+  \subsection{Sample Calculation}
+  As an example of the monodromy method consider the 4-point function:
+  
+  \begin{align}
+   \braket{\op{O}_1(0)\op{O}_1(x)\op{O}_2(1)\op{O}_2(\infty)}
+  \end{align}
+  
+  we can calculate the semi-classical $c\to \infty$ conformal block due to exchange of the primary with dimension $h_p$ (and descendants) with $\epsilon_i=6 h_i/c$ fixed. These blocks will be calculated perturbatively to linear order in $\epsilon_1, \epsilon_p$ but non-perturbatively in $\epsilon_2$.
+  
+  As discussed in the introduction to this section we solve the differential equation \ref{ch3:monodromy_diff} with $T(z)$ given by \ref{ch3:monodromy_Tz}:
+  \begin{align} \label{ch3:sample_diff}
+   \psi^{\prime\prime}(z)+T(z)\psi(z)=0
+  \end{align}
+
+  Then we impose the monodromy condition \ref{ch3:monodromy_matrix} on the two solutions to obtain the auxiliary function $c_2(x)$ of $T(z)$ (\ref{ch3:monodromy_Tz}). Then $\frac{\partial f(x_i)}{\partial x_2}=c_2(x)$ and the semi-classical blocks is given by
+  
+  \begin{align}
+   \mathcal{F}(x)=e^{-\frac{c}{6}f(x)}
+  \end{align}
+  
+  Expanding $\psi, T \text{ and } c_2$  perturbatively in $\epsilon_1$:
+  
+  \begin{align}
+   \psi &= \psi^{(0)}+\epsilon_1 \psi^{(1)} + \epsilon_1^2\psi^{(2)}+\dots \\
+   T &= T^{(0)}+\epsilon_1 T^{(1)} + \epsilon_1^2T^{(2)}+\dots \\
+   c_2 &= \epsilon_1 c_2^{(1)} + \epsilon_1^2 c_2^{(2)}+\dots
+  \end{align}
+  Note that $c_2$ gets its first contribution at linear order in $\epsilon_1$ since $c_2=\frac{\partial f}{\partial x_2}$ and in the limit $\epsilon_1 \to 0$, $f \to 0$ because we are then computing the 4-point function $\braket{\mathbb{1}\mathbb{1}\op{O}_2 \op{O}_2}$ which essentially amounts to calculating the 2-point function $\braket{h_2|h_2}$ and so $\braket{h_2|h_2} \sim \mathcal{O}(1) \implies f \to 0$.
+  
+  Then substituting the proper values of the scaling dimensions in \ref{ch3:monodromy_Tz}:
+  
+  \begin{align}
+   T(z) = \epsilon_2\frac{1}{(1-z)^2}  + \epsilon_1 \left(\frac{1}{z^2} + \frac{1}{(z-x)^2}+\frac{2}{z(1-z)}  -\frac{c_2(x)}{\epsilon_1}\frac{x(1-x)}{z(z-x)(1-z)} \right) 
+  \end{align}
+
+  Order-by-order in $\epsilon_1$ then the equations read:
+  
+  \begin{align}
+    (\psi^{(0)})^{\prime\prime} + T^{(0)}\psi^{(0)} &= 0 \\
+    (\psi^{(1)})^{\prime\prime} + T^{(0)}\psi^{(1)} &= -T^{(1)} \psi^{(0)} \\
+    &\vdots
+  \end{align}
+
+  The solutions then read:
+  
+  \begin{align}
+   &\psi^{(0)}_{1,2}(z) =(1-z)^{\frac{1\pm \sqrt{1-4\epsilon_2}}{2}} \\
+   &\psi^{(1)}_i(z) = \psi_1^{(0)}\int dz \frac{-\psi_2^{(0)}(-T^{(1)}\psi^{(0)}_i)}{W} + \psi^{(0)}_2\int dz \frac{\psi_1^{(0)}(-T^{(1)}\psi^{(0)}_i)}{W} \label{ch3:solution_first}
+  \end{align}
+  where $W=\sqrt{1-4\epsilon_2}$. We need to impose the monodromy condition \ref{ch3:monodromy_matrix} on a cyclic path enclosing the points $0, x$. Since $\psi^{(0)}_{1,2}(z)$ are analytic in $z$ around $0, x$, the $0^\text{th}$ order solutions have trivial monodromy. Going to $1^\text{st}$ order we need to check the coefficients of  $\psi^{(0)}_{1,2}(z)$ in equation \ref{ch3:solution_first}.
+  
+  There are two ways to check the monodromy of the coefficients of  $\psi^{(0)}_{1,2}(z)$ in equation \ref{ch3:solution_first}. We can either calculate the indefinite integral, and see how the result transforms under a closed curve enclosing both $0,x$:
+  \begin{align}
+   \int dz \frac{-\psi_2^{(0)}(-T^{(1)}\psi^{(0)}_1)}{W} = \frac{\left(\frac{c_2}{\epsilon_1}(1-x)+1 \right)\log(\frac{z}{z-x})+\frac{(x-2)z+x}{z(z-x)}}{\sqrt{1-4\epsilon_2}}
+  \end{align}
+  However this turns out to be cumbersome since the integrals are not always straightforward to perform. 
+  
+  The second method is computing the integral as a \emph{contour} integral along a closed contour enclosing the points $0,x$, which works exactly because it computes the difference between the values of the integral at the same point, but after orbiting the singularities once. This is much more convenient since in this case one can use the method of residues.
+  
+  \begin{align}
+   \oint dz \frac{-\psi_2^{(0)}(-T^{(1)}\psi^{(0)}_1)}{W} = 0
+  \end{align}
+  Since the integrand's poles at $0,x$ have opposite residues.
+  
+  Similarly we have for the other coefficients:
+  \begin{align}
+   \oint dz \frac{-\psi_1^{(0)}(-T^{(1)}\psi^{(0)}_2)}{W} &= (\delta M_{0x})_{11} =0 \\
+   \oint dz \frac{\psi_1^{(0)}(-T^{(1)}\psi^{(0)}_1)}{W} &= (\delta M_{0x})_{12} \\
+   \oint dz \frac{\psi_2^{(0)}(-T^{(1)}\psi^{(0)}_2)}{W} &= (\delta M_{0x})_{21} \\ 
+  \end{align}
+  
+  \begin{align}
+   (\delta M_{0x})_{12}= \frac{2\pi i}{W}\left( (W-1)-\left(\frac{c_2(x)}{\epsilon_1}(x-1)-1 \right)(1-x)^W+\frac{c_2(x)}{\epsilon_1}(x-1) + W(1-x)^W\right)
+  \end{align}
+  At linear order therefore the monodromy matrix becomes:
+  \begin{align}
+   M &= \mathbb{1}+\delta M_{0x} \\
+   \implies M &= \left( \begin{array}{cc}
+                 1 & (\delta M_{0x})_{12}\\
+                 (\delta M_{0x})_{21} & 1
+                \end{array} \right)
+  \end{align}
+
+  Comparing the eigenvalues of the monodromy matrix with \ref{ch3:monodromy_matrix} at linear order gives:
+  
+  \begin{align}
+    (\delta M_{0x})_{12}  (\delta M_{0x})_{21} = -4\pi \epsilon_p^2
+  \end{align}
+  which gives for $c_2$
+  \begin{align}
+   c_2(x)=\frac{\epsilon_1(W-1+(1-x)^W(1+W))\pm W(1-x)^{W/2}\epsilon_p}{(1-x)(1-(1-x)^W)}
+  \end{align}
+  This upon integration, and fixing the integration constant and $\pm$ sign by requiring that $f(x) \sim 2(\epsilon_1- \epsilon_p)\log(x) as x \sim 0$ gives:
+  \begin{align}
+   f(x) = (2\epsilon_1- \epsilon_p)\log(\frac{1-(1-x)^W}{W}) + \epsilon_1(1-W)\log(1-z)+2\epsilon_p \log(\frac{1-(1-x)^{W/2}}{2})
+  \end{align}
+  which gives the conformal block as:
+  
+  \begin{align}
+   \braket{\op{O}_1(0)\op{O}_1(x)\op{O}_2(1)\op{O}_2(\infty)} = \sum_p \mathcal{F}(p;x) \bar{\mathcal{F}}(p;\bar x) \\   
+   \mathcal{F}(p;x) =e^{-\frac{c}{6}f(x)} \quad \text{as} \, c \to \infty
+  \end{align}
+
+  
+  
+  

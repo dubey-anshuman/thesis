@@ -1,0 +1,18 @@
+  \chapter{Applications}
+  \section{R\'enyi Entropy}
+  Consider a system $S$, written as a combination of two subsystems $A$ and $B=A^\complement$, i.e. $S=A \cup B$. Then the whole Hilbert space may be written as a direct product of the individual Hilbert spaces, i.e. $\mathcal{H}_S= \mathcal{H}_A \otimes \mathcal{H}_B$. Let $\rho$ be the density operator of the complete system $S$, then the reduced density operator of the subsystem $A$ is found by taking a partial trace over the complementary Hilbert space $\mathcal{H}_B$, $\rho_A = \text{Tr}_B[\rho]$. An observer having access to only the subsystem $A$ but not the whole system $S$ measures this reduced density operator $\rho_A$. This situation appears in a number of experimental/gedanken situations, for example while studying the black hole information paradox (see appendix \ref{infoparadox}) or in the case of Open Quantum Systems in Quantum Computation where the system of interest is open (coupled to the environment). In this case the Entanglement Entropy for the system $A$ is given by the von-Neumann entropy of A i.e. $S_A=-\text{Tr}[\rho_A \ln \rho_A]$. 
+  
+  In Information Theory the R\'{e}nyi entropy is a generalisation of the Shannon entropy, Hartley entropy, the collision entropy and the min-entropy. In Quantum Mechanical systems it is defined as 
+  \begin{align}
+   S^{(\alpha)} = \frac{1}{1-\alpha} \ln \text{Tr}[rho^\alpha] \label{renyi} 
+  \end{align}
+  The entanglement entropy(EE) may be calculated from the R\'{e}nyi entropy by taking the limit $\alpha \to 1$:
+  \begin{align}
+   S_{EE} = \lim_{\alpha \to 1}  S^{(\alpha)} \label{eentropy}
+  \end{align}
+  We are primarily 
+  
+  If in a quantum field theory once can represent the density operator $\rho$ as a path integral, it is also possible to write $\rho^n$ as a path integral for integer $n$, and then one can extend the result for general $n$ by analytic continuation. Thereafter, once can use \ref{renyi} and \ref{eentropy} to compute the entanglement entropy. This procedure generally goes under the name of the Replica trick \cite{Calabrese:2004eu}.
+The semi-classical Virasoro blocks calculated in the last chapter can be immediately used to reproduce the two interval R\'{e}nyi entropy on the plane \cite{Perlmutter:2015iya}. 
+  \section{Conformal Bootstrap}
+  \section{Cluster Decomposition Principle}

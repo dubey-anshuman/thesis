@@ -1,0 +1,8 @@
+
+\begin{tikzpicture}
+\foreach \s in {0,...,8}
+{
+\coordinate (A) at (0,0.3*\s);
+\draw (A)  ..controls ++(1,1) and ++(-1,-1) .. ++(4,{0.4+0.1*\s}) node[right = 1mm] {$t=t_\s$}; %.. controls (1,4) and (3,0)
+}
+\end{tikzpicture}

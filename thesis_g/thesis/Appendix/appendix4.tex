@@ -1,0 +1,30 @@
+\chapter{Differential Forms} \label{infoparadox}
+Differential forms are a coordinate independent approach to multivariable calculus. They're specially useful in defining integrands over general manifolds without reference to a particular coordinate basis. Differential forms find many uses in physics and mathematics and are particularly useful when studying the \textbf{topological} properties of the manifolds. In particular, differential forms appear in the study of D-branes in string theory. D$p$-branes are dynamical objects in string theory charged under Raymond-Raymond p-forms. The general \emph{Stokes' Theorem} for Differential forms codifies a generalisation of the fundamental theorem of calculus, Greens' Theorem and Stokes' Theorem of multivariable calculus.
+
+
+For a thorough discussion of differential forms and their various applications, refer to \emph{The Geometry of Physics} by Theodore Frankel \cite{frankel2004geometry}. The conventions used here are of that text.
+
+Consider a finite dimensional(CHeck infinite?) vecotr space $E$, and its dual space $E^*$.  
+\begin{definition}{\emph{Differential Form}}
+A differential form of order p or a \textbf{p-form} $\omega_p$ is a totally antisymmetric tensor of rank $(0,p)$ ( a covariant $p$-tensor) $\omega_p \in \otimes^p E^*$:
+\begin{align}
+ \omega_p(\cdots,\bm{v}_r,\cdots,\bm{v}_s,\cdots) = -\omega_p(\cdots,\bm{v}_s,\cdots,\bm{v}_r,\cdots)
+\end{align}
+in each entry. Here $\bm{v}_m \in E \; \forall \; 1 \leq m \leq p$ 
+\end{definition}
+
+The collection of all $p$-forms forms a vector space which is a subspace of $\otimes^p E^*$, the tensor product space of p copies of the dual vector space $E^*$:
+\begin{align}
+ \bigwedge^p E^* = E* \wedge E^* \wedge \cdots \wedge E^* \subset  \otimes^p E^*
+\end{align}
+
+\begin{definition}{\emph{Wedge Product}}
+A \textbf{wedge} or \textbf{exterior} or \textbf{Grassmann} product of a $p$-form and a $q$-form is a $p+q$-form: 
+\begin{align}
+ \wedge : \bigwedge^p E^* \times \bigwedge^q E^* \to \bigwedge^{p+q}E^*
+\end{align}
+
+for a $p$-form $\omega_p$ and a $q$-form $\eta_q$ 
+
+in each entry. Here $\bm{v}_m \in E \; \forall \; 1 \leq m \leq p$ 
+\end{definition}

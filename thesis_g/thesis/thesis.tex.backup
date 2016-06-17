@@ -1,0 +1,52 @@
+\documentclass[a4paper,12pt,twoside]{report}
+%\usepackage[utf8]{inputenc}
+
+%\documentclass[11pt,a4paper,twoside]{report}
+%\usepackage[english]{babel}
+
+%\def\division{\char'057}
+%\setlength{\unitlength}{.95pt}
+\renewcommand{\baselinestretch}{1.2}
+\usepackage{ae,aecompl}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+%\font\sansserif=cmss10
+%\renewcommand{\baselinestretch}{1.2}
+%\setlength{\textwidth}{15cm}
+%\setlength{\textheight}{29.7cm}
+%\setlength{\topskip}{0cm}
+%\setlength{\footskip}{0cm}
+%\addtolength{\oddsidemargin}{-2cm}
+%\addtolength{\topmargin}{-5cm}
+
+\setlength\parindent{0pt}
+\setlength\parskip{5pt}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ %total={170mm,257mm},
+ left=30mm,
+ right=30mm,
+ top=10mm,
+ bottom = 15mm,
+ }
+
+
+
+
+\begin{document}
+\include{Title/title}
+\include{Abstract/abstract}
+\tableofcontents
+%\include{toc}
+\include{Chapter1/chapter1}
+\include{Chapter2/chapter2}
+\include{Chapter3/chapter3}
+\include{Chapter4/chapter4}
+%\include{Chapter5/chapter5}
+\include{Chapter6/chapter6}
+\include{Chapter7/chapter7}
+\include{Chapter8/chapter8}
+\bibliography{thesis}
+\bibliographystyle{siam}
+\end{document}

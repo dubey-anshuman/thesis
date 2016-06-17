@@ -1,0 +1,92 @@
+  \chapter{Conformal Blocks and the Semi-Classical Limit} \label{ch:semiclassical}
+  
+  In accord with Zamolodchikov's $c$-theorem \cite{Zamolodchikov:1986gt}, the central charge $c$ of a 2D CFT is related to the number of degrees of freedom of the theory. Therefor the large $c$ limit naturally satisfies one of the requirements for a CFT to have a nice classical(?) gravity description. 
+  
+  see http://arxiv.org/pdf/1502.07742.pdf for Introduction
+  
+  Belavin, Polyakov and Zamolodchikov [BPZ] discovered in their ground breaking work \cite{Belavin:1984vu} that Virasoro blocks of 4-point functions containing contributions from all elements in the conformal family of the exchanged operator are completely fixed by the operator dimensions and the central charge $c$ of the theory.
+  \section{Introduction-the realm of large central charge}
+   Even before the advent of the AdS/CFT correspondence, the relationship between 3D gravity in AdS space and 2D CFTs was explored by Brown and Henneaux \cite{Brown:1986nw}. Using the Hamiltonian formalism they obtained the relation between the central charge $c$ of the CFT living on the conformal boundary of the AdS space to the radius of curvature $l$ of the AdS space(G is Newton's constant in 3D gravity):
+ 
+ \begin{align}
+  c=\frac{3l}{2G} \label{central}
+ \end{align}
+Subsequently, this result was reproduce by Ba\~{n}ados using the Cherm-Simons formulation in 1994 \cite{Banados:1994tn} and Balasubramanian and Kraus using AdS/CFT in 1999 \cite{Balasubramanian:1999re}.
+  
+  In this chapter, we will work exclusively in 2D CFTs. The semi-calssical limit corresponds to taking the large central charge $c \to \infty$ limit. This limit turns out to be particularly interesting because the large central charge $c \gg 1$ limit corresponds to $l \gg l_p$ as is evident from \ref{central} where $l_p$ is the planck length. This is the weakly coupled limit for the gravity theory in the bulk and therefore we can perform a weak-coupling expansion in $l_p/l$ in the bulk and $1/c$ in the boundary theory. In addition, the $c \to \infty$ limit has been shown to calculate the R\'{e}nyi entropy for a subsystem in a theory described by a 2D CFT \cite{Hartman:2013mia}. In this limit, keeping all other parameters ($h_i$, the operator dimensions of external and exchanged operators in this limit) constant, the infinite dimensional Virasoro algebra reduces simply to the global algebra with generators $L_{-1}, L_0$ and $L_1$
+  \begin{align*}
+   [L_m,L_n] = (m-n)L_{m+n} + \frac{c}{12}m(m^2-1) \delta_{m,-n}
+  \end{align*}
+  
+  Moreover, from the AdS/CFT correspondence the CFT stress-energy tensor $T(z,\bar{z})$ and creation oeprators $L_n$ for $n \leq -2$ create gravitons in the bulk field[EXPAND]. Due to the relation \cite{central} the central charge in the CFT determines the strength of the gravitational interaction in the bulk gravity theory. 
+  \subsection{Central Charge}
+
+  \section{Spectrum of Semi-Classical Limits}
+  There are a number of different possibilities to be considered for the involved operator dimensions when taking the large central charge $c \gg 1$ limit for conformal blocks. We can have all the operator dimensionss $h_i$ and the exchanged operator dimension $h_p$ held fixed in the limit $c\to \infty$. Or on the other hand, we may have the operator dimensions scaling with the central charge, i.e. hold $h_i/c$ and $h_p/c$ fixed in the limit $c \to \infty$. As a middle ground we could also have some operator dimensions, say $h_1, h_2$ held fixed while others say $h_3, h_4$ scale with the central charge. In what follows, operator dimensions that scale with the central charge will be referred to as ``Heavy'' and operator dimensions that remain fixed in the limit $c \to \infty$ will be referred to as ``Light''.
+  \subsection{Global Limit}
+  
+  The global limit corresponds to computing the conformal block with all light operators. In this limit the Virasoro blocks have a particularly simple structure and reduces to the conformal block due to the global conformal algebra spanned by $L_{\pm 1}$ and $L_0$ as in the case of $d \geq 3$ CFTs\cite{Fitzpatrick:2015zha}. The global block has the form of a hypergeometric function. Let's see how this works.
+  
+  
+  
+  \subsection{Heavy-Light Limit}
+  
+  The heavy-light limit corresponds to taking some operator dimensions $h_L$ fixed (the ``light'' operators) and some operator dimensions $h_H$ (the ``heavy'' operators) scaling as c in the large $c$ limit. In particular we will consider two heavy and two light operators, in the 4-point function:
+  \begin{align}
+   \Braket{\mathcal{O}_{L_1}\mathcal{O}_{L_2}\mathcal{O}_{H_1}\mathcal{O}_{H_2}} = \Braket{0|\mathcal{O}_{L_1}\mathcal{O}_{L_2}\mathcal{O}_{H_1}\mathcal{O}_{H_2}|0} 
+  \end{align}
+  Using commuttivity of operators inside the correlator, this can be written as 
+   \begin{align}
+   \Braket{0|\mathcal{O}_{H_1}\mathcal{O}_{L_1}\mathcal{O}_{L_2}\mathcal{O}_{H_2}|0} = \Braket{\mathcal{O}_{H_1}|\mathcal{O}_{L_1}\mathcal{O}_{L_2}|\mathcal{O}_{H_2}} 
+  \end{align}
+  
+  And so in the AdS/CFT picture one associates this correlator with a BTZ black hole (or defect) created by the heavy operators and the light operators sourcing geodesics in this background. We review this computation in section \ref{sec:num1}
+  \subsection{Perturbative Heavy Limit}
+  \subsection{Non-Perturbative Heavy Limit}
+  \section{Operator Exchange: Spinless vs Spinning}
+  %\subsection{Mellin Space Technology}
+  \section{Monodromy Method and Liouville Theory}
+  
+  The semi-classical limit and the monodromy method for calculation of the semi-classical conformal blocks comes from Liouville theory. This section closely follows the discussion in \cite{Harlow:2011ny} and \cite{Fitzpatrick:2014vua}. Liouville theory was in the past sutied by Polyakov in the study of non-critical string theory \cite{Polyakov:1981rd}. More recently relations of quantum Liouville theory to 
+certain 4 dimensional superconformal field theories have been explored\cite{Alday:2009aq}.
+
+Liouville theory is described by the action
+
+\begin{align}
+ S= \frac{1}{4b^2} \int \mathrm{d}^2x  \sqrt{g} \left( g^{\alpha \beta} \partial_\alpha \phi \partial_\beta \phi + 2(1+b^2) R \phi + 16\lambda e^\phi\right)
+\end{align}
+Where $R$ is the Ricci tensor for the metric $g_{\alpha\beta}$. The quantum Liouville theory is a 2D conformal field theory.  
+  
+  Correlators of degenerate primary fields in 2D CFTs satisfy a particular linear differential equation
+  
+  
+  
+  The Monodromy method is a powerful technique used to compute the semi-classical Virasoro blocks in certain limits. Recall that a 2D CFT 4 point function may be expanded in conformal blocks $\mathcal{F}$ as :
+  \begin{align}
+  \left\langle O_1(\infty) O_2(0) O_3(z,\bar{z}) O_4(1)\right\rangle = \sum a_p \mathcal{F}(z,h_i,h_p,c) \mathcal{F}(\bar{z},\bar{h}_i,\bar{h}_p,c)
+  \end{align}
+  where $a_p$ denotes the product of OPE coefficients
+  \begin{align}
+   a_p = c_{12}^p c_{34}^p
+  \end{align}
+  The Virasoro block $\mathcal{F}$ includes contributions from all the descendants due to exchange of a primary p. Although the general form of the virasoro blocks is unknown, in the semi-classical limit with $c \gg 1$ and with $h_p/c \text{ and } h_i/c$ fixed, there is much evidence that the Virasoro blocks exponentiate, although there exists no direct proof from the definition of Virasoro blocks as sum over descendants.
+  
+  \begin{align}
+   \mathcal{F}(z,h_i,h_p,c) \approx \exp \left[-\frac{c}{6} f\left( \frac{h_i}{c}, \frac{h_p}{c}, z\right)\right]
+  \end{align}
+  There exists no known explicit results for $f$ but only expansions around $z=0$:
+  \begin{align}
+   \frac{c}{6} f\left( \frac{h_i}{c}, \frac{h_p}{c}, z\right) = (h_1 + h_2 - h_p) \log z - \frac{(h_p +h_2 - h_1)(h_p + h_3 - h_4)}{2h_p} z + \mathcal{O} (z^2)
+  \end{align}
+  However, $f$ might be calulated as the solution to the following second order differential equation with the prescribed mondromy:
+  \begin{align}
+   \frac{d^2 \psi(z)}{dz^2} + T(z)\psi(z) =0
+  \end{align}
+with
+\begin{align}
+ T(z) = \sum_i \left(\frac{h_i/c}{(z-z_i)^2} - \frac{c_i}{z-z_i} \right)
+\end{align}
+Here $z_i$ are the points at which operators $\mathcal{O}_i$ are inserted, i.e. $(z_1,z_2,z_3,z_4)= (\infty,0,z,1)$ and the $c_i$'s are known as accessory parameters. Three of the $c_i$ may be determined by requiring that the function $T(z)$ vanish as $z^{-4}$ as $z \to \infty$
+  
+  
+  \section{Holographic Computation} \label{sec:num1}

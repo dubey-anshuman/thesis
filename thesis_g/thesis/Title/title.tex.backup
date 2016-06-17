@@ -1,0 +1,46 @@
+\begin{titlepage}
+\setcounter{page}{1}
+
+\begin{center}
+
+\vspace*{3cm}
+%\special{psfile="vaakuna.eps" vscale=22 hscale=22 voffset=-150 hoffset=127}
+%\special{psfile="vaakuna.eps" width=0.5\textwidth}
+\includegraphics[width=45mm]{Title/vaakuna.eps}
+
+\vspace*{2cm}
+
+Master's Thesis - Theoretical Physics \\
+%(koulutusohjelma tähän)
+
+\vspace{2.0cm} 
+{\Large \bf
+  \rule{0pt}{3ex}{A Review of 4-Point Conformal Blocks \\ and their Applications to AdS Physics}
+}
+
+\title{
+ (%otsikko tähän)
+}
+%\maketitle
+
+\vspace{2.0cm} 
+Anshuman Dubey\\
+2016
+
+\vspace{1.5cm} 
+\begin{tabular}{ll}	Advisor: & 	Esko Keski-Vakkuri \\ 
+			Examiners: &	Kari Rummukainen \\
+				     &	Esko Keski-Vakkuri
+\end{tabular}
+
+\vspace{1.5cm} University of Helsinki
+
+Department of Physics
+
+%\vspace{0.5cm} PL 64 (%Gustaf Hällströmin katu 2)
+
+%00014 Helsingin yliopisto
+
+\end{center}
+
+\end{titlepage}

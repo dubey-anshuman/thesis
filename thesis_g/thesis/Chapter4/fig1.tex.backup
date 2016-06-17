@@ -1,0 +1,16 @@
+\begin{figure}[!h]
+\centering
+\begin{tikzpicture}[scale=2,>=stealth]
+%Draw Circle radius 1 cm
+    \draw[black,very thick] (0,0) circle (1.2cm);
+     \foreach \angle/\count in {45/1,135/2,225/3,315/4}
+        {
+\tikzset{snake it/.style={decorate, decoration=snake}}
+%Draws the 3 acceleration vectors directed inward and offset slightly from the distance vectors
+        \draw [name=acceleration vectors,very thick,->]
+            (\angle:1.2cm) -- node[midway] {} (\angle:0.9cm) ;
+              \path [draw=blue,snake it](-4,0) -- (-2,0) -- (2,0) -- (4,0);
+  \draw[draw=blue, snake it] (2,0) arc (0:180:2cm);
+    }
+\end{tikzpicture}
+\end{figure}

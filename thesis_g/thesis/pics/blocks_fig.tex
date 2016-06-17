@@ -1,0 +1,38 @@
+\begin{figure}[!h] \label{ch2:blocks_fig}
+\centering
+\begin{tikzpicture}[scale=2,>=stealth]
+%Draw Circle radius 1 cm
+  \def\radi{1cm}
+    \coordinate (O1) at (0,0);
+    \coordinate (O2) at (1,0);
+   % \foreach \angle/\count in {45/1,135/2,225/3,315/4}
+    %    {
+        
+\tikzset{snake it/.style={decorate, decoration=snake}}
+%Draws the 3 acceleration vectors directed inward and offset slightly from the distance vectors
+       % \draw [name=acceleration vectors,very thick, snake it]
+        %    (\angle:1.2cm) -- node[midway] {} (\angle:0.9cm) ;
+         %     \path [draw=blue,snake it](-4,0) -- (-2,0) -- (2,0) -- (4,0);
+  %\draw[draw=blue, snake it] (2,0) arc (0:180:2cm);
+   % } snake it
+    
+        \path[coordinate] (O2)  coordinate(A)++( 45:\radi) coordinate(B1);
+        \path[coordinate] (O1)  coordinate(A)++( 135:\radi) coordinate(B2);
+        \path[coordinate] (O2)  coordinate(A)++( -45:\radi) coordinate(B3);
+        \path[coordinate] (O1)  coordinate(A)++( -135:\radi) coordinate(B4);
+        \draw[draw=red, very thick] (O2)--(B1);
+        \draw[draw=red, very thick] (O2)--(B3);
+        \draw[draw=red, very thick] (O1)--(B2);
+        \draw[draw=red, very thick] (O1)--(B4);
+        \draw[draw=red,very thick] (O1)--(O2);
+        
+         \draw (0.5,0) node[above]{$\Delta$};
+         \draw (B2) node[above]{$i$};
+         \draw (B4) node[below]{$j$};
+         \draw (B3) node[below]{$k$};
+         \draw (B1) node[above]{$l$};
+         
+         \draw (-2.5,0) node[center]{\Large $\braket{\op{O}_i\op{O}_j\op{O}_k\op{O}_l}=\displaystyle\sum_{\Delta} \lambda_{ij\Delta} \lambda^{kl\Delta}$  };
+\end{tikzpicture}
+\caption{4-point correlator as a sum over conformal partial waves, weighted by the OPE coefficients.}
+\end{figure}
